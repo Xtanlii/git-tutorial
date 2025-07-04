@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+  <div class="solution">
+    <p class="Result"></p>
+    <p class="answer"></p>
+  </div>
+  
+  </p>
+  <p>
+    <button onclick=" no('1');">1</button>
+    <button onclick=" no('2');">2</button>
+    <button onclick=" no('3')">3</button>
+    <button onclick=" no('+');">+</button>
+  </p>
+
+  <p>
+    <button onclick=" no('4');">4</button>
+    <button onclick=" no('5');">5</button>
+    <button onclick=" no('6');">6</button>
+    <button onclick=" no('-');">-</button>
+  </div>
+
+  <p>
+    <button onclick=" no('7');">7</button>
+    <button onclick=" no('8');">8</button>
+    <button onclick=" no('9');">9</button>
+    <button onclick=" no('*');">*</button>
+  </div>
+
+  <p>
+    <button onclick=" no('0');">0</button>
+    <button onclick=" no('.');">.</button>
+    <button onclick=" no('/');">/</button>
+    <button onclick=" calculateNum();">=</button>
+  
+  </p>
+  <p>
+    <button>Del</button>
+    <button onclick="
+      clearScreen();
+    ">AC</button>
+  </p>
+ 
+  <script>
+    const result = document.querySelector('.Result'); 
+    const answer = document.querySelector('.answer'); 
+
+    let calculation = '';
+  
+  function no(number) {
+    calculation = calculation += number
+    result.innerHTML = calculation;
+  }
+
+  function calculateNum() {
+    calculation =eval(calculation);
+    answer.innerHTML = calculation;
+    calculation = '';
+  }
+
+  function clearScreen() {
+    calculation = '';
+    result.innerHTML = '';
+    answer.innerHTML = '';
+  }
+
+  document.addEventListener("keydown",
+    function(event) {
+        if (event.key === "1" || event.key === "2" || event.key === "3" || event.key === '4' || event.key === '5' || event.key === '6' || event.key === '7' || event.key === '8' || event.key === '9' || event.key === '0'){
+         no(`${event.key}`);
+        }
+        else if (event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/" || event.key === ".") {
+          no(`${event.key}`);
+        }
+        else if(event.key === "=" || event.key === "Enter") {
+          calculateNum();
+        }
+        else if(event.key === "Backspace" ) {
+          clearScreen();
+        } 
+    }
+
+  );
+
+  
+  
+
+
+
+    
+  </script>
+</body>
+</html>
+
+

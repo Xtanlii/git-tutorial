@@ -1,0 +1,42 @@
+body{
+  background-color: rgb(223, 223, 231);
+  margin: 20px 0 0 20px;
+  font-family: Arial;
+}
+
+.solution{
+  background-color: white;
+  height: 80px;
+  width: 11rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+  font-size: 20px;
+  border-radius: 5px;
+
+}
+
+.Result{
+  margin: 5px 0 0 7px;
+  text-align: left;
+
+}
+
+.answer{
+  text-align: right;
+  padding: 0 7px 0 0;
+}
+
+p{
+margin-bottom: 5px;
+}
+
+button{
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  background-color: rgb(7, 7, 7, 0.9);
+  color: white;
+}
+
